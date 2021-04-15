@@ -10,9 +10,47 @@
 
     <article>
         <h3> Property binding </h3>
-        <img src="{{urlImagem}}" > <!-- NORMAL MODE -->
-        <img [src]='urlImagem' > <!-- Property Binding --> 
-        <img bind-src='urlImagem' > <!-- Property Binding --> 
+        <!-- <img src="{{urlImagem}}" > NORMAL MODE
+        <img [src]='urlImagem' > Property Binding  
+        <img bind-src='urlImagem' > Property Binding --> 
+    </article>
+
+    <article>
+        <h3> Class e Style binding </h3>
+        <div>
+            Seleciona uma Classe:
+            <select #classe (change)='0'>
+                <option value='alert-success'>Sucesso</option>
+                <option value='alert-danger'>Perigo</option>
+                <option value='alert-info'>Informação</option>
+                <option value='alert-light'>Claro</option>
+            </select>
+            <br><br>
+
+            <div class="aler {{classe.value}}" role="alert">
+                Texto colorido conforme o valor do combobox 
+            </div>
+
+            <br>
+
+            <div class="alert" role="alert"
+                [class.alert-success]="classe.value == 'alert-success'">
+                Sucesso</div>
+            <div class="alert" role="alert"
+                [class.alert-danger]="classe.value == 'alert-danger'">
+                Perigo</div>
+            <div class="alert" role="alert"
+                [class.alert-info]="classe.value == 'alert-info'">
+                Informação</div>
+            <div class="alert" role="alert"
+                [class.alert-light]="classe.value == 'alert-light'">
+                Light</div>
+
+            <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+            Erro, só aparece se se alert-danger for selecionado 
+            </div>
+
+        </div>
     </article>
 
 </section>
