@@ -131,6 +131,10 @@
             <h3>Input/Output Properties</h3>
 
             <app-curso [nome]="nomeCurso"></app-curso>
+
+            <coletor valor="10" 
+                (mudouValor)="onMudouValor($event)"
+            ></coletor>
         </article>
 
     </section>
