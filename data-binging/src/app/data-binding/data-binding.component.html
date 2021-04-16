@@ -1,6 +1,6 @@
 <section class="property-binging">
 
-    <article>
+    <!-- <article>
         <h3> Interpolação / Interpolação </h3>
         <p> String renderizada por interpolação: {{ url }} </p>
         <p> Resultado de 1 + 1 é {{ 1 + 1 }} </p>
@@ -10,9 +10,9 @@
 
     <article>
         <h3> Property binding </h3>
-        <!-- <img src="{{urlImagem}}" > NORMAL MODE
+        <img src="{{urlImagem}}" > NORMAL MODE
         <img [src]='urlImagem' > Property Binding  
-        <img bind-src='urlImagem' > Property Binding --> 
+        <img bind-src='urlImagem' > Property Binding 
     </article>
 
     <article>
@@ -51,6 +51,44 @@
             </div>
 
         </div>
-    </article>
+    </article> -->
+
+    <section class="event-binding">
+
+        <article>
+            <h3>Event Binding</h3>
+            <div>
+
+                <button 
+                    class="btn btn-primary"
+                    (click)="botaoClicado()"
+                >
+                Clique-me
+                </button>
+                <br>
+                <input
+                    type="text"
+                    (keyup)="onKeyUp($event)"
+                    (keyup.enter)="salvarValor(campoInput.value)"
+                    (blur)="salvarValor(campoInput.value)"
+                    #campoInput
+                />
+
+                <p>Valor atual: {{valorAtual}}</p>
+                <p>Valor salvo: {{valorSalvo}}</p>
+
+                <br><br>
+                <span
+                    (mouseover)="mouseOverOut()"
+                    (mouseout)="mouseOverOut()"
+                    [class.highlight]="isMouseOver"
+                >
+                Passe o mouse sobre mim
+            </span>
+
+            </div>
+        </article>
+
+    </section>
 
 </section>
