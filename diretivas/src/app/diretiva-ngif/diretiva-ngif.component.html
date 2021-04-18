@@ -1,0 +1,48 @@
+<h5>*Ngif</h5>
+
+<div *ngIf="cursos.length > 0"> <!-- Não possui lógica else -->
+    Lista de Cursos
+</div>
+
+<div *ngIf="cursos.length == 0"> <!-- Não possui lógica else -->
+    Não há cursos para serem exibidos.
+</div>
+<br>
+
+<div *ngIf="mostrarCursos == true">
+    Lista de cursos
+</div>
+
+<div *ngIf="mostrarCursos != true"> <!-- Quando a lógica é falsa o elemento fica somente comentado no HTML final, ruim para performance -->
+    Não há cursos para serem exibidos.
+</div>
+
+<br>
+<button (click)="onClick()" >Mostrar ou esconder cursos</button> <!-- O próprio template trabalha com o *ngIf -->
+
+<br>
+<h5>hidden como alternativa ao *ngIf</h5> <!-- Alternativa usando propriedade HTML -->
+
+<div [hidden]="!mostrarCursos"> <!-- Usando o hidden + o binding para o template ouvir a variável TS  -->
+    Lista de cursos
+</div>
+
+<div [hidden]="mostrarCursos"> <!-- Usar o [hidden] para quando a árvore seja de elementos ser pequena, ou seja muito custosa criar a lista. 
+                                    Como o hidden mantém o conteúdo no código, para segurança não é bom.  -->
+    Não há cursos para serem exibidos.
+</div>
+
+<br>
+<h5>Explicando o * antes das diretivas</h5>
+
+<div *ngIf="!mostrarCursos == true"> 
+    Com *
+</div>
+
+<template [ngIf]="mostrarCursos">
+    Com [] / como o Angular traduz
+</template>
+
+<div template="ngIf mostrarCursos"> 
+    Com template como propriedade da div
+</div>

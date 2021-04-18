@@ -1,0 +1,23 @@
+<p FundoAmarelo >Texto de fundo amarelo.</p>
+<br>
+<p HighlightComMouse >Texto com highlight com o mouse</p>
+
+<p Highlight [defaultColor]="'grey'" >Texto com highlight com cores customizadas </p>
+<p [Highlight]="'red'" [defaultColor]="'blue'" >Texto com highlight com cores customizadas </p>
+<p Highlight >Texto com highlight com cores customizadas </p>
+
+
+<h5>Diretiva estrutural</h5>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos:
+</div>
+
+<div *ngIf="!mostrarCursos">
+    Não há cursos a serem exibidos.
+</div>
+
+<br>
+<button (click)="onClick()">
+    Mostra os cursos
+</button>

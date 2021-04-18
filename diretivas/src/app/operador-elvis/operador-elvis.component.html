@@ -1,0 +1,5 @@
+<p>Descrição: {{ tarefa.desc }}</p>
+<!-- <p>Responsável: {{ tarefa.responsavel.nome  }}</p> Não rola--> 
+<p>Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : ''  }}</p> <!-- Funciona, mas é enorme e pode ser ainda pior com objetos mais complexos -->
+<p>Responsável: {{ tarefa.responsavel?.nome }}</p> <!-- o '?' é o operador elvis, faz uma lógica como a anterior -->
+<p>Responsável: {{ tarefa.responsavel?.usuario?.nome }}</p> <!-- o elvis '?' pode ser usado várias vezes -->

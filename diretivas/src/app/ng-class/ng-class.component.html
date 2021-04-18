@@ -1,0 +1,20 @@
+<h5>ngClass - diretiva de atributo</h5>
+
+<h1>
+    <i style='background-color: aqua;' class="glyphicon"
+    [class.glyphicon-star-empty]="!meuFavorito"
+    [class.glyphicon-star]="meuFavorito"
+    (click)="onClick()"></i>
+</h1>
+
+<h1>
+    <i style='background-color: aqua;' class="glyphicon"
+    [ngClass]="{
+        'glyphicon-star-empty': !meuFavorito,
+        'glyphicon-star': meuFavorito
+    }"
+    (click)="onClick()"> </i>
+</h1>
+
+
+<!-- Fail -->

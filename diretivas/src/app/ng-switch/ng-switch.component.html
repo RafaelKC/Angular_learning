@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" 
+            [class.active]="aba == 'home'"
+            (click)="aba = 'home'">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+            [class.active]="aba == 'features'"
+            (click)="aba = 'features'">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+            [class.active]="aba == 'Pricing'"
+            (click)="aba = 'pricing'">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" [ngSwitch]="aba"> <!-- Vai verificar a variável aba -->
+      <p  *ngSwitchCase="'home'">Home Here</p> <!-- Se aba igual home -->
+      <p *ngSwitchCase="'features'">Features Here</p> <!-- Se aba igual features -->
+      <p *ngSwitchCase="'pricing'">Pricing Here</p> <!-- Se aba igual pricing -->
+      <p *ngSwitchDefault >Home</p> <!-- Se aba não tiver valor, ou for diferente dos anteriores, esse será o exibido -->
+  </div>

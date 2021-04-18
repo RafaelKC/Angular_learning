@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <ng-content select=".titulo"></ng-content>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+          <ng-content select=".item1"></ng-content>
+      </li>
+      <li class="list-group-item">
+          <ng-content select=".item2"></ng-content>
+      </li>
+      <li class="list-group-item">
+           <!--  <ng-content></ng-content> sem seletor -->
+      </li>
+    </ul>
+  </div>
