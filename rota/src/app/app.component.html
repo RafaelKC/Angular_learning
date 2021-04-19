@@ -1,0 +1,20 @@
+<nav>
+
+    <div>
+        <a routerLink="" >Rotas aff</a>
+        <ul id="nav-mobile">
+            <li RouterLinkActive ><a routerLink="./cursos">Cursos</a></li>
+            <li RouterLinkActive ><a routerLink="./login">Login</a></li>
+            <li RouterLinkActive ><a [routerLink]="['curso', idCurso.value]">Curso com ID</a></li>
+        </ul>
+    </div>
+    
+</nav>
+
+    <div class="container">
+        <p>Entre com o ID: </p>
+        <input type="text" #idCurso>
+
+        <router-outlet></router-outlet>
+    </div>
+
