@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { CursosService } from '../cursos/cursos.service';
+import { CursosService } from '../cursos.service';
 
 @Component({
   selector: 'app-curso-detalhe',
@@ -17,7 +17,8 @@ export class CursoDetalheComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _cursoService: CursosService
+    private _cursoService: CursosService,
+    private _router: Router,
     ) {
     //this.id = this._route.snapshot.params['id'];
    }
@@ -28,6 +29,10 @@ export class CursoDetalheComponent implements OnInit {
     });
 
     this.curso = this._cursoService.getCurso(this.id)
+
+    if (this.curso == undefined) {
+      this._router.navigate(['/cursos/notfound'])
+    }
   }
 
   ngOnDestroy(): void {

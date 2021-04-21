@@ -3,30 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CursosComponent } from './cursos/cursos.component';
+//import { CursosModule } from './cursos/cursos.module';
 import { LoginComponent } from './login/login.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatTabsModule} from '@angular/material/tabs';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component'; 
-import { CursosService } from './cursos/cursos.service';
+//import { StudentsModule } from './students/students.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { AuthService } from './login/auth.service';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CursosComponent,
     LoginComponent,
-    CursoDetalheComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    //CursosModule,
+    //StudentsModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatTabsModule
+    MatFormFieldModule,
+    MatButtonModule,
+    FormsModule
   ],
-  providers: [CursosService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    CursosGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

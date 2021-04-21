@@ -1,1 +1,17 @@
-<p>login works!</p>
+<h5>Login</h5>
+
+<div>
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input id="usuario" matInput placeholder="pat@example.com" required
+          [(ngModel)]="user.email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input [(ngModel)]="user.password" id="password" matInput type="password">
+        </mat-form-field>
+        <button type="submit" name="action" (click)="doLogin()">Login</button>
+      </div>
+</div>

@@ -1,19 +1,20 @@
-<nav>
+<nav *ngIf="showMenu">
 
     <div>
         <a routerLink="" >Rotas aff</a>
         <ul id="nav-mobile">
-            <li RouterLinkActive ><a routerLink="./cursos">Cursos</a></li>
-            <li RouterLinkActive ><a routerLink="./login">Login</a></li>
-            <li RouterLinkActive ><a [routerLink]="['curso', idCurso.value]">Curso com ID</a></li>
+            <li RouterLinkActive ><a routerLink="./cursos" [queryParams]='{pagina:1}' >Cursos</a></li>
+            <li RouterLinkActive ><a routerLink="./login" >Login</a></li>
+           <!--  <li RouterLinkActive ><a [routerLink]="['curso', idCurso.value]">Curso com ID</a></li> -->
+            <li RouterLinkActive ><a routerLink="/students">Alunos</a></li>
         </ul>
     </div>
     
 </nav>
 
     <div class="container">
-        <p>Entre com o ID: </p>
-        <input type="text" #idCurso>
+       <!--  <p>Entre com o ID: </p>
+        <input type="text" #idCurso> -->
 
         <router-outlet></router-outlet>
     </div>

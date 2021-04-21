@@ -1,0 +1,23 @@
+<mat-grid-list 
+style="background-color: black;"
+cols="2" >
+  
+    <mat-grid-tile>
+        <h5>Lista de Alunos</h5>
+        
+        <div>
+            <mat-list>
+                <mat-list-item 
+                *ngFor="let student of students"
+                (click)="acessou()"> 
+                    <a style="text-decoration:none; color: inherit;" [routerLink]="student.id" > {{ student.name }} </a> 
+                </mat-list-item>
+            </mat-list>       
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <router-outlet></router-outlet>
+
+    </mat-grid-tile>
+</mat-grid-list>
